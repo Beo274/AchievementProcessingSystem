@@ -7,6 +7,8 @@ import org.springframework.transaction.annotation.Transactional;
 import ru.achievements.entities.Achievement;
 import ru.dao.AchievementDAO;
 
+import java.util.List;
+
 @Service
 public class AchievementServiceImpl implements AchievementService {
     @Autowired
@@ -16,5 +18,9 @@ public class AchievementServiceImpl implements AchievementService {
     @Transactional
     public int createAchievement(Achievement achievement) {
         return achievementDAO.create(achievement);
+    }
+
+    public List<Achievement> getAllAchievements() {
+        return achievementDAO.getAll();
     }
 }

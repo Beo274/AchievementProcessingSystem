@@ -9,7 +9,7 @@ public class AchievementDTO {
     public String difficulty;
     public Platform platform;
 
-    public AchievementDTO from(Achievement achievement) {
+    public static AchievementDTO from(Achievement achievement) {
         AchievementDTO dto = new AchievementDTO();
         dto.achievement_name = achievement.getAchievement_name();
         dto.action = achievement.getAction();
