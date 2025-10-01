@@ -9,10 +9,12 @@ import lombok.Data;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
+    @JoinColumn(name = "userId")
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    private int userId;
 
     @Column(unique = true, nullable = false)
-    private String user_name;
+    private String username;
 
     @Column
     private int rating;

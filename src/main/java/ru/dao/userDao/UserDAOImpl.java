@@ -1,9 +1,9 @@
-package ru.dao;
+package ru.dao.userDao;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import ru.achievements.entities.User;
-import ru.repository.UserRepository;
+import ru.dao.repository.UserRepository;
 
 @Component
 public class UserDAOImpl implements UserDAO {
@@ -13,6 +13,11 @@ public class UserDAOImpl implements UserDAO {
     @Override
     public int add(User user) {
         userRepository.save(user);
-        return user.getUser_id();
+        return user.getUserId();
+    }
+
+    @Override
+    public int existsByName(String username) {
+        return userRepository.findByUsername(username).getUserId();
     }
 }

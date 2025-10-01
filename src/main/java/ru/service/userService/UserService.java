@@ -1,4 +1,4 @@
-package ru.service;
+package ru.service.userService;
 
 import ru.achievements.entities.User;
 

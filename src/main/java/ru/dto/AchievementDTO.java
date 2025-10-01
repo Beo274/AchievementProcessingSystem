@@ -11,7 +11,7 @@ public class AchievementDTO {
 
     public static AchievementDTO from(Achievement achievement) {
         AchievementDTO dto = new AchievementDTO();
-        dto.achievement_name = achievement.getAchievement_name();
+        dto.achievement_name = achievement.getAchievementName();
         dto.action = achievement.getAction();
         dto.difficulty = achievement.getDifficulty();
         dto.platform = achievement.getPlatform();
@@ -20,7 +20,7 @@ public class AchievementDTO {
 
     public Achievement toAchievement() {
         Achievement achievement = new Achievement();
-        achievement.setAchievement_name(this.achievement_name);
+        achievement.setAchievementName(this.achievement_name);
         achievement.setAction(this.action);
         achievement.setDifficulty(this.difficulty);
         achievement.setPlatform(this.platform);

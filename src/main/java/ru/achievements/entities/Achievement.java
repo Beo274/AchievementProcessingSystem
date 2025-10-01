@@ -9,10 +9,12 @@ import lombok.Data;
 public class Achievement {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JoinColumn(name = "id")
+//    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private int id;
 
-    @Column(name = "achievement_name")
-    private String achievement_name;
+    @Column(name = "achievementName")
+    private String achievementName;
 
     @Column(name = "action")
     private String action;
